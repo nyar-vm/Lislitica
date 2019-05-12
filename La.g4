@@ -15,8 +15,7 @@ symbol: Identifier (DOT Identifier)*;
 expressionStatement: expression (COMMA expression)*;
 // High computing priority in the front
 expression
-    : 'Raw' '(' text = STRING ')'                                         # RawText
-    | function_apply                                                      # FunctionApply
+    : function_apply                                                      # FunctionApply
     | op = prefix_ops right = expression                                  # PrefixExpression
     | left = expression op = postfix_ops                                  # PostfixExpression
     | left = expression op = DOT right = expression                       # MethodApply
@@ -53,10 +52,11 @@ keyvalue
     : key = validKey Colon value = element     # NormalKey
     | key = Identifier Colon value = element   # SymbolKey
     | Power key = symbol Colon value = element # RawKey;
-validKey: NUMBER | STRING;
+validKey: NUMBER | STRING | raw;
+raw: 'Raw' '(' text = STRING ')';
 // $antlr-format alignColons trailing;
 listLiteral   : '{' (element (COMMA? element)*)? COMMA? '}';
-element       : (expression | dict_literal | listLiteral);
+element       : (expression | dict_literal | listLiteral | raw);
 indexLiteral  : '[' index_valid (COMMA? index_valid)+? ']';
 index_valid   : (symbol | Integer) Colon?;
 signedInteger : (Plus | Minus)? Integer;
