@@ -93,13 +93,6 @@ public class LaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements LaV
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitRawText(LaParser.RawTextContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitAssignOperator(LaParser.AssignOperatorContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -276,6 +269,13 @@ public class LaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements LaV
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitValidKey(LaParser.ValidKeyContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitRaw(LaParser.RawContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

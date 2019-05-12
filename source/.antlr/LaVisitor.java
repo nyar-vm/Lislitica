@@ -81,13 +81,6 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitString(LaParser.StringContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code RawText}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitRawText(LaParser.RawTextContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code AssignOperator}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
@@ -263,6 +256,12 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitValidKey(LaParser.ValidKeyContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LaParser#raw}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRaw(LaParser.RawContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LaParser#listLiteral}.
 	 * @param ctx the parse tree

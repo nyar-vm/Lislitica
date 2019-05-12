@@ -147,18 +147,6 @@ public class LaBaseListener implements LaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRawText(LaParser.RawTextContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitRawText(LaParser.RawTextContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterAssignOperator(LaParser.AssignOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -466,6 +454,18 @@ public class LaBaseListener implements LaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitValidKey(LaParser.ValidKeyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterRaw(LaParser.RawContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitRaw(LaParser.RawContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

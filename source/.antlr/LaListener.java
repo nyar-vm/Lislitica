@@ -127,18 +127,6 @@ public interface LaListener extends ParseTreeListener {
 	 */
 	void exitString(LaParser.StringContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code RawText}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterRawText(LaParser.RawTextContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code RawText}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitRawText(LaParser.RawTextContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code AssignOperator}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
@@ -438,6 +426,16 @@ public interface LaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitValidKey(LaParser.ValidKeyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LaParser#raw}.
+	 * @param ctx the parse tree
+	 */
+	void enterRaw(LaParser.RawContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LaParser#raw}.
+	 * @param ctx the parse tree
+	 */
+	void exitRaw(LaParser.RawContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LaParser#listLiteral}.
 	 * @param ctx the parse tree
