@@ -5,6 +5,7 @@ import LaOperator;
 program: statement* EOF;
 statement
     : emptyStatement
+    | literalStatement eos?
     | expressionStatement eos?
     | assign_statement eos?;
 /*====================================================================================================================*/
@@ -12,22 +13,23 @@ emptyStatement: eos;
 eos: Semicolon;
 symbol: Identifier (DOT Identifier)*;
 /*====================================================================================================================*/
+literalStatement: Number | String | Identifier;
+/*====================================================================================================================*/
 expressionStatement: expression (COMMA expression)*;
 // High computing priority in the front
 expression
     : op = prefix_ops right = expression                                  # PrefixExpression
     | left = expression op = postfix_ops                                  # PostfixExpression
-    | left = expression op = DOT right = expression                       # MethodApply
+    | left = symbol op = DOT right = expression                           # MethodApply
     | function_apply                                                      # FunctionApply
-    | number right = expression                                           # SpaceOperator
+    | Number right = expression                                           # SpaceOperator
     | left = expression op = left_ops right = expression                  # LeftOperator
     | <assoc = right> left = expression op = right_ops right = expression # RightOperator
     | <assoc = right> id = assign_lhs op = assign_ops expr = assignable   # AssignOperator
     | data = listLiteral                                                  # List
     | left = expression data = indexLiteral                               # Index
-    | data = dict_literal                                                 # DictLiteral
-    | atom = STRING                                                       # StringLiteral
-    | atom = NUMBER                                                       # NumberLiteral
+    | data = dictLiteral                                                  # Dict
+    | atom = literalStatement                                             # Literal
     | atom = symbol                                                       # SymbolExpression
     | '(' expression ')'                                                  # PriorityExpression;
 /*====================================================================================================================*/
@@ -45,32 +47,32 @@ assign_lhs
     | Identifier '[' Integer ']'    # AssignWithList;
 assign_pass: Tilde | symbol;
 /*====================================================================================================================*/
-dict_literal
-    : '{' (keyvalue (COMMA keyvalue)*)? COMMA? '}' # LiteralDict
-    | '{' Colon '}'                                # EmptyDict;
-keyvalue
+listLiteral
+    : '{' element (COMMA? element)* COMMA? '}' # LiteralList
+    | '{' COMMA? '}'                           # EmptyList;
+indexLiteral: '[' index_valid (COMMA? index_valid)+? ']';
+dictLiteral
+    : '{' keyValue (COMMA keyValue)* COMMA? '}' # LiteralDict
+    | '{' Colon '}'                             # EmptyDict;
+keyValue
     : key = validKey Colon value = element     # NormalKey
     | key = Identifier Colon value = element   # SymbolKey
     | Power key = symbol Colon value = element # RawKey;
-validKey: NUMBER | STRING | raw;
-raw: 'Raw' '(' text = STRING ')';
 // $antlr-format alignColons trailing;
-listLiteral   : '{' (element (COMMA? element)*)? COMMA? '}';
-element       : (expression | dict_literal | listLiteral | raw);
-indexLiteral  : '[' index_valid (COMMA? index_valid)+? ']';
+validKey      : Number | String | raw;
+raw           : 'Raw' '(' text = String ')';
+element       : (expression | dictLiteral | listLiteral | raw);
 index_valid   : (symbol | Integer) Colon?;
 signedInteger : (Plus | Minus)? Integer;
 //FIXME: replace NUMBER with signedInteger
-/*====================================================================================================================*/
-number : Integer;
 /*====================================================================================================================*/
 LineComment                : Shebang ~[\r\n]* -> channel(HIDDEN);
 PartComment                : Comment .*? Comment -> channel(HIDDEN);
 WhiteSpace                 : UnicodeWhiteSpace+ -> skip;
 NewLine                    : ('\r'? '\n' | '\r')+ -> skip;
-STRING                     : SimpleString;
+String                     : SimpleString;
 Identifier                 : NameStartCharacter NameCharacter*;
-NUMBER                     : Integer | Float;
+Number                     : Float | Integer;
 Float                      : Digit+ Dot Digit* | Dot Digit+;
 Integer                    : Digit+;
 fragment Digit             : [0-9];
