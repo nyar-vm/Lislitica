@@ -1,0 +1,10 @@
+1
+2
+3
+456789
+1.0
+"string"
+{1, 2, 3}
+{,}       #! Empty list
+{a: b}
+{:}       #! Empty dict
