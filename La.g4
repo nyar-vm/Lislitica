@@ -15,19 +15,19 @@ symbol: Identifier (DOT Identifier)*;
 expressionStatement: expression (COMMA expression)*;
 // High computing priority in the front
 expression
-    : function_apply                                                      # FunctionApply
-    | op = prefix_ops right = expression                                  # PrefixExpression
+    : op = prefix_ops right = expression                                  # PrefixExpression
     | left = expression op = postfix_ops                                  # PostfixExpression
     | left = expression op = DOT right = expression                       # MethodApply
-    | left = expression right = expression                                # SpaceOperator
+    | function_apply                                                      # FunctionApply
+    | number right = expression                                           # SpaceOperator
     | left = expression op = left_ops right = expression                  # LeftOperator
     | <assoc = right> left = expression op = right_ops right = expression # RightOperator
     | <assoc = right> id = assign_lhs op = assign_ops expr = assignable   # AssignOperator
     | data = listLiteral                                                  # List
     | left = expression data = indexLiteral                               # Index
-    | data = dict_literal                                                 # Dict
-    | atom = STRING                                                       # String
-    | atom = NUMBER                                                       # Number
+    | data = dict_literal                                                 # DictLiteral
+    | atom = STRING                                                       # StringLiteral
+    | atom = NUMBER                                                       # NumberLiteral
     | atom = symbol                                                       # SymbolExpression
     | '(' expression ')'                                                  # PriorityExpression;
 /*====================================================================================================================*/
@@ -61,6 +61,8 @@ indexLiteral  : '[' index_valid (COMMA? index_valid)+? ']';
 index_valid   : (symbol | Integer) Colon?;
 signedInteger : (Plus | Minus)? Integer;
 //FIXME: replace NUMBER with signedInteger
+/*====================================================================================================================*/
+number : Integer;
 /*====================================================================================================================*/
 LineComment                : Shebang ~[\r\n]* -> channel(HIDDEN);
 PartComment                : Comment .*? Comment -> channel(HIDDEN);
