@@ -58,6 +58,16 @@ public interface LaListener extends ParseTreeListener {
 	 */
 	void exitSymbol(LaParser.SymbolContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LaParser#literalStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterLiteralStatement(LaParser.LiteralStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LaParser#literalStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitLiteralStatement(LaParser.LiteralStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LaParser#expressionStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -152,30 +162,6 @@ public interface LaListener extends ParseTreeListener {
 	 */
 	void exitMethodApply(LaParser.MethodApplyContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code DictLiteral}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterDictLiteral(LaParser.DictLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code DictLiteral}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitDictLiteral(LaParser.DictLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code StringLiteral}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterStringLiteral(LaParser.StringLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code StringLiteral}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitStringLiteral(LaParser.StringLiteralContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code RightOperator}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
@@ -188,6 +174,18 @@ public interface LaListener extends ParseTreeListener {
 	 */
 	void exitRightOperator(LaParser.RightOperatorContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code Dict}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterDict(LaParser.DictContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Dict}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitDict(LaParser.DictContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code PrefixExpression}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
@@ -199,6 +197,18 @@ public interface LaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPrefixExpression(LaParser.PrefixExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Literal}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterLiteral(LaParser.LiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Literal}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitLiteral(LaParser.LiteralContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code SymbolExpression}
 	 * labeled alternative in {@link LaParser#expression}.
@@ -235,18 +245,6 @@ public interface LaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPostfixExpression(LaParser.PostfixExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code NumberLiteral}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterNumberLiteral(LaParser.NumberLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code NumberLiteral}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitNumberLiteral(LaParser.NumberLiteralContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LaParser#function_apply}.
 	 * @param ctx the parse tree
@@ -358,62 +356,96 @@ public interface LaListener extends ParseTreeListener {
 	 */
 	void exitAssign_pass(LaParser.Assign_passContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code LiteralList}
+	 * labeled alternative in {@link LaParser#listLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterLiteralList(LaParser.LiteralListContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code LiteralList}
+	 * labeled alternative in {@link LaParser#listLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitLiteralList(LaParser.LiteralListContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code EmptyList}
+	 * labeled alternative in {@link LaParser#listLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterEmptyList(LaParser.EmptyListContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code EmptyList}
+	 * labeled alternative in {@link LaParser#listLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitEmptyList(LaParser.EmptyListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LaParser#indexLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterIndexLiteral(LaParser.IndexLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LaParser#indexLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitIndexLiteral(LaParser.IndexLiteralContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code LiteralDict}
-	 * labeled alternative in {@link LaParser#dict_literal}.
+	 * labeled alternative in {@link LaParser#dictLiteral}.
 	 * @param ctx the parse tree
 	 */
 	void enterLiteralDict(LaParser.LiteralDictContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code LiteralDict}
-	 * labeled alternative in {@link LaParser#dict_literal}.
+	 * labeled alternative in {@link LaParser#dictLiteral}.
 	 * @param ctx the parse tree
 	 */
 	void exitLiteralDict(LaParser.LiteralDictContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code EmptyDict}
-	 * labeled alternative in {@link LaParser#dict_literal}.
+	 * labeled alternative in {@link LaParser#dictLiteral}.
 	 * @param ctx the parse tree
 	 */
 	void enterEmptyDict(LaParser.EmptyDictContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code EmptyDict}
-	 * labeled alternative in {@link LaParser#dict_literal}.
+	 * labeled alternative in {@link LaParser#dictLiteral}.
 	 * @param ctx the parse tree
 	 */
 	void exitEmptyDict(LaParser.EmptyDictContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code NormalKey}
-	 * labeled alternative in {@link LaParser#keyvalue}.
+	 * labeled alternative in {@link LaParser#keyValue}.
 	 * @param ctx the parse tree
 	 */
 	void enterNormalKey(LaParser.NormalKeyContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code NormalKey}
-	 * labeled alternative in {@link LaParser#keyvalue}.
+	 * labeled alternative in {@link LaParser#keyValue}.
 	 * @param ctx the parse tree
 	 */
 	void exitNormalKey(LaParser.NormalKeyContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code SymbolKey}
-	 * labeled alternative in {@link LaParser#keyvalue}.
+	 * labeled alternative in {@link LaParser#keyValue}.
 	 * @param ctx the parse tree
 	 */
 	void enterSymbolKey(LaParser.SymbolKeyContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code SymbolKey}
-	 * labeled alternative in {@link LaParser#keyvalue}.
+	 * labeled alternative in {@link LaParser#keyValue}.
 	 * @param ctx the parse tree
 	 */
 	void exitSymbolKey(LaParser.SymbolKeyContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code RawKey}
-	 * labeled alternative in {@link LaParser#keyvalue}.
+	 * labeled alternative in {@link LaParser#keyValue}.
 	 * @param ctx the parse tree
 	 */
 	void enterRawKey(LaParser.RawKeyContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code RawKey}
-	 * labeled alternative in {@link LaParser#keyvalue}.
+	 * labeled alternative in {@link LaParser#keyValue}.
 	 * @param ctx the parse tree
 	 */
 	void exitRawKey(LaParser.RawKeyContext ctx);
@@ -438,16 +470,6 @@ public interface LaListener extends ParseTreeListener {
 	 */
 	void exitRaw(LaParser.RawContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LaParser#listLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterListLiteral(LaParser.ListLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LaParser#listLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitListLiteral(LaParser.ListLiteralContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link LaParser#element}.
 	 * @param ctx the parse tree
 	 */
@@ -457,16 +479,6 @@ public interface LaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitElement(LaParser.ElementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link LaParser#indexLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterIndexLiteral(LaParser.IndexLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LaParser#indexLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitIndexLiteral(LaParser.IndexLiteralContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LaParser#index_valid}.
 	 * @param ctx the parse tree
@@ -487,16 +499,6 @@ public interface LaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSignedInteger(LaParser.SignedIntegerContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link LaParser#number}.
-	 * @param ctx the parse tree
-	 */
-	void enterNumber(LaParser.NumberContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LaParser#number}.
-	 * @param ctx the parse tree
-	 */
-	void exitNumber(LaParser.NumberContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LaParser#prefix_ops}.
 	 * @param ctx the parse tree

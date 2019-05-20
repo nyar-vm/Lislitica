@@ -18,7 +18,7 @@ public class LaLexer extends Lexer {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, LineComment=8, 
-		PartComment=9, WhiteSpace=10, NewLine=11, STRING=12, Identifier=13, NUMBER=14, 
+		PartComment=9, WhiteSpace=10, NewLine=11, String=12, Identifier=13, Number=14, 
 		Float=15, Integer=16, LCeil=17, RCeil=18, LFloor=19, RFloor=20, LAngle=21, 
 		RAngle=22, LQuote=23, RQuote=24, Import=25, LeftShift=26, LessEqual=27, 
 		Less=28, Export=29, RightShift=30, GraterEqual=31, Grater=32, Increase=33, 
@@ -46,7 +46,7 @@ public class LaLexer extends Lexer {
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "LineComment", 
-			"PartComment", "WhiteSpace", "NewLine", "STRING", "Identifier", "NUMBER", 
+			"PartComment", "WhiteSpace", "NewLine", "String", "Identifier", "Number", 
 			"Float", "Integer", "Digit", "OctalDigit", "HexDigit", "Letter", "UnicodeWhiteSpace", 
 			"SimpleString", "EmojiCharacter", "NameCharacter", "NameStartCharacter", 
 			"LCeil", "RCeil", "LFloor", "RFloor", "LAngle", "RAngle", "LQuote", "RQuote", 
@@ -88,7 +88,7 @@ public class LaLexer extends Lexer {
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, "LineComment", "PartComment", 
-			"WhiteSpace", "NewLine", "STRING", "Identifier", "NUMBER", "Float", "Integer", 
+			"WhiteSpace", "NewLine", "String", "Identifier", "Number", "Float", "Integer", 
 			"LCeil", "RCeil", "LFloor", "RFloor", "LAngle", "RAngle", "LQuote", "RQuote", 
 			"Import", "LeftShift", "LessEqual", "Less", "Export", "RightShift", "GraterEqual", 
 			"Grater", "Increase", "PlusTo", "Plus", "LogicXor", "Decrease", "MinusFrom", 
@@ -334,12 +334,12 @@ public class LaLexer extends Lexer {
 		"\u011f\3\2\2\2\u011f\u0120\b\f\3\2\u0120\30\3\2\2\2\u0121\u0122\5-\27"+
 		"\2\u0122\32\3\2\2\2\u0123\u0127\5\63\32\2\u0124\u0126\5\61\31\2\u0125"+
 		"\u0124\3\2\2\2\u0126\u0129\3\2\2\2\u0127\u0125\3\2\2\2\u0127\u0128\3\2"+
-		"\2\2\u0128\34\3\2\2\2\u0129\u0127\3\2\2\2\u012a\u012d\5!\21\2\u012b\u012d"+
-		"\5\37\20\2\u012c\u012a\3\2\2\2\u012c\u012b\3\2\2\2\u012d\36\3\2\2\2\u012e"+
-		"\u0130\5#\22\2\u012f\u012e\3\2\2\2\u0130\u0131\3\2\2\2\u0131\u012f\3\2"+
-		"\2\2\u0131\u0132\3\2\2\2\u0132\u0133\3\2\2\2\u0133\u0137\5\u00cbf\2\u0134"+
-		"\u0136\5#\22\2\u0135\u0134\3\2\2\2\u0136\u0139\3\2\2\2\u0137\u0135\3\2"+
-		"\2\2\u0137\u0138\3\2\2\2\u0138\u0141\3\2\2\2\u0139\u0137\3\2\2\2\u013a"+
+		"\2\2\u0128\34\3\2\2\2\u0129\u0127\3\2\2\2\u012a\u012d\5\37\20\2\u012b"+
+		"\u012d\5!\21\2\u012c\u012a\3\2\2\2\u012c\u012b\3\2\2\2\u012d\36\3\2\2"+
+		"\2\u012e\u0130\5#\22\2\u012f\u012e\3\2\2\2\u0130\u0131\3\2\2\2\u0131\u012f"+
+		"\3\2\2\2\u0131\u0132\3\2\2\2\u0132\u0133\3\2\2\2\u0133\u0137\5\u00cbf"+
+		"\2\u0134\u0136\5#\22\2\u0135\u0134\3\2\2\2\u0136\u0139\3\2\2\2\u0137\u0135"+
+		"\3\2\2\2\u0137\u0138\3\2\2\2\u0138\u0141\3\2\2\2\u0139\u0137\3\2\2\2\u013a"+
 		"\u013c\5\u00cbf\2\u013b\u013d\5#\22\2\u013c\u013b\3\2\2\2\u013d\u013e"+
 		"\3\2\2\2\u013e\u013c\3\2\2\2\u013e\u013f\3\2\2\2\u013f\u0141\3\2\2\2\u0140"+
 		"\u012f\3\2\2\2\u0140\u013a\3\2\2\2\u0141 \3\2\2\2\u0142\u0144\5#\22\2"+

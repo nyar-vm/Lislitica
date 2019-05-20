@@ -76,6 +76,18 @@ public class LaBaseListener implements LaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLiteralStatement(LaParser.LiteralStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLiteralStatement(LaParser.LiteralStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpressionStatement(LaParser.ExpressionStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -172,30 +184,6 @@ public class LaBaseListener implements LaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDictLiteral(LaParser.DictLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDictLiteral(LaParser.DictLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterStringLiteral(LaParser.StringLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitStringLiteral(LaParser.StringLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterRightOperator(LaParser.RightOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -208,6 +196,18 @@ public class LaBaseListener implements LaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterDict(LaParser.DictContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDict(LaParser.DictContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterPrefixExpression(LaParser.PrefixExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -215,6 +215,18 @@ public class LaBaseListener implements LaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPrefixExpression(LaParser.PrefixExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLiteral(LaParser.LiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLiteral(LaParser.LiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -251,18 +263,6 @@ public class LaBaseListener implements LaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPostfixExpression(LaParser.PostfixExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNumberLiteral(LaParser.NumberLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNumberLiteral(LaParser.NumberLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -388,6 +388,42 @@ public class LaBaseListener implements LaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLiteralList(LaParser.LiteralListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLiteralList(LaParser.LiteralListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEmptyList(LaParser.EmptyListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEmptyList(LaParser.EmptyListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIndexLiteral(LaParser.IndexLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIndexLiteral(LaParser.IndexLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterLiteralDict(LaParser.LiteralDictContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -472,18 +508,6 @@ public class LaBaseListener implements LaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterListLiteral(LaParser.ListLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitListLiteral(LaParser.ListLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterElement(LaParser.ElementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -491,18 +515,6 @@ public class LaBaseListener implements LaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitElement(LaParser.ElementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterIndexLiteral(LaParser.IndexLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitIndexLiteral(LaParser.IndexLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -527,18 +539,6 @@ public class LaBaseListener implements LaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSignedInteger(LaParser.SignedIntegerContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNumber(LaParser.NumberContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNumber(LaParser.NumberContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

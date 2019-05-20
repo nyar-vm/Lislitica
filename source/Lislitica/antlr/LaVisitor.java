@@ -41,6 +41,12 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSymbol(LaParser.SymbolContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link LaParser#literalStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLiteralStatement(LaParser.LiteralStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link LaParser#expressionStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -96,20 +102,6 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMethodApply(LaParser.MethodApplyContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code DictLiteral}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDictLiteral(LaParser.DictLiteralContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code StringLiteral}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStringLiteral(LaParser.StringLiteralContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code RightOperator}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
@@ -117,12 +109,26 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRightOperator(LaParser.RightOperatorContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Dict}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDict(LaParser.DictContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code PrefixExpression}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitPrefixExpression(LaParser.PrefixExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Literal}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLiteral(LaParser.LiteralContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code SymbolExpression}
 	 * labeled alternative in {@link LaParser#expression}.
@@ -144,13 +150,6 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPostfixExpression(LaParser.PostfixExpressionContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code NumberLiteral}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNumberLiteral(LaParser.NumberLiteralContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LaParser#function_apply}.
 	 * @param ctx the parse tree
@@ -217,36 +216,56 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssign_pass(LaParser.Assign_passContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code LiteralList}
+	 * labeled alternative in {@link LaParser#listLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLiteralList(LaParser.LiteralListContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code EmptyList}
+	 * labeled alternative in {@link LaParser#listLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEmptyList(LaParser.EmptyListContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LaParser#indexLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIndexLiteral(LaParser.IndexLiteralContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code LiteralDict}
-	 * labeled alternative in {@link LaParser#dict_literal}.
+	 * labeled alternative in {@link LaParser#dictLiteral}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitLiteralDict(LaParser.LiteralDictContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code EmptyDict}
-	 * labeled alternative in {@link LaParser#dict_literal}.
+	 * labeled alternative in {@link LaParser#dictLiteral}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitEmptyDict(LaParser.EmptyDictContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code NormalKey}
-	 * labeled alternative in {@link LaParser#keyvalue}.
+	 * labeled alternative in {@link LaParser#keyValue}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitNormalKey(LaParser.NormalKeyContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code SymbolKey}
-	 * labeled alternative in {@link LaParser#keyvalue}.
+	 * labeled alternative in {@link LaParser#keyValue}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitSymbolKey(LaParser.SymbolKeyContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code RawKey}
-	 * labeled alternative in {@link LaParser#keyvalue}.
+	 * labeled alternative in {@link LaParser#keyValue}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
@@ -264,23 +283,11 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRaw(LaParser.RawContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LaParser#listLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitListLiteral(LaParser.ListLiteralContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link LaParser#element}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitElement(LaParser.ElementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link LaParser#indexLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIndexLiteral(LaParser.IndexLiteralContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LaParser#index_valid}.
 	 * @param ctx the parse tree
@@ -293,12 +300,6 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSignedInteger(LaParser.SignedIntegerContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link LaParser#number}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNumber(LaParser.NumberContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LaParser#prefix_ops}.
 	 * @param ctx the parse tree
