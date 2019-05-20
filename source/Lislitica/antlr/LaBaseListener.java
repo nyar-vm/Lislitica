@@ -1,4 +1,5 @@
 // Generated from D:/Hybrid/Lislitica\La.g4 by ANTLR 4.7.2
+package Lislitica.antlr;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -135,13 +136,13 @@ public class LaBaseListener implements LaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterString(LaParser.StringContext ctx) { }
+	@Override public void enterSpaceOperator(LaParser.SpaceOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitString(LaParser.StringContext ctx) { }
+	@Override public void exitSpaceOperator(LaParser.SpaceOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -159,18 +160,6 @@ public class LaBaseListener implements LaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSpaceOperator(LaParser.SpaceOperatorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSpaceOperator(LaParser.SpaceOperatorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterMethodApply(LaParser.MethodApplyContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -183,13 +172,25 @@ public class LaBaseListener implements LaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNumber(LaParser.NumberContext ctx) { }
+	@Override public void enterDictLiteral(LaParser.DictLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNumber(LaParser.NumberContext ctx) { }
+	@Override public void exitDictLiteral(LaParser.DictLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStringLiteral(LaParser.StringLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStringLiteral(LaParser.StringLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -202,18 +203,6 @@ public class LaBaseListener implements LaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitRightOperator(LaParser.RightOperatorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDict(LaParser.DictContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDict(LaParser.DictContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -262,6 +251,18 @@ public class LaBaseListener implements LaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPostfixExpression(LaParser.PostfixExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumberLiteral(LaParser.NumberLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumberLiteral(LaParser.NumberLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -526,6 +527,18 @@ public class LaBaseListener implements LaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSignedInteger(LaParser.SignedIntegerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumber(LaParser.NumberContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumber(LaParser.NumberContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

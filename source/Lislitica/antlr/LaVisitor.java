@@ -1,4 +1,5 @@
 // Generated from D:/Hybrid/Lislitica\La.g4 by ANTLR 4.7.2
+package Lislitica.antlr;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -74,12 +75,12 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIndex(LaParser.IndexContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code String}
+	 * Visit a parse tree produced by the {@code SpaceOperator}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitString(LaParser.StringContext ctx);
+	T visitSpaceOperator(LaParser.SpaceOperatorContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code AssignOperator}
 	 * labeled alternative in {@link LaParser#expression}.
@@ -88,13 +89,6 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssignOperator(LaParser.AssignOperatorContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code SpaceOperator}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSpaceOperator(LaParser.SpaceOperatorContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code MethodApply}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
@@ -102,12 +96,19 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMethodApply(LaParser.MethodApplyContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Number}
+	 * Visit a parse tree produced by the {@code DictLiteral}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNumber(LaParser.NumberContext ctx);
+	T visitDictLiteral(LaParser.DictLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StringLiteral}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringLiteral(LaParser.StringLiteralContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code RightOperator}
 	 * labeled alternative in {@link LaParser#expression}.
@@ -115,13 +116,6 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitRightOperator(LaParser.RightOperatorContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Dict}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDict(LaParser.DictContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code PrefixExpression}
 	 * labeled alternative in {@link LaParser#expression}.
@@ -150,6 +144,13 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPostfixExpression(LaParser.PostfixExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code NumberLiteral}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumberLiteral(LaParser.NumberLiteralContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LaParser#function_apply}.
 	 * @param ctx the parse tree
@@ -292,6 +293,12 @@ public interface LaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSignedInteger(LaParser.SignedIntegerContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LaParser#number}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumber(LaParser.NumberContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LaParser#prefix_ops}.
 	 * @param ctx the parse tree

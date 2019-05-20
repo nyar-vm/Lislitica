@@ -1,4 +1,5 @@
 // Generated from D:/Hybrid/Lislitica\La.g4 by ANTLR 4.7.2
+package Lislitica.antlr;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -115,17 +116,17 @@ public interface LaListener extends ParseTreeListener {
 	 */
 	void exitIndex(LaParser.IndexContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code String}
+	 * Enter a parse tree produced by the {@code SpaceOperator}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterString(LaParser.StringContext ctx);
+	void enterSpaceOperator(LaParser.SpaceOperatorContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code String}
+	 * Exit a parse tree produced by the {@code SpaceOperator}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitString(LaParser.StringContext ctx);
+	void exitSpaceOperator(LaParser.SpaceOperatorContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code AssignOperator}
 	 * labeled alternative in {@link LaParser#expression}.
@@ -139,18 +140,6 @@ public interface LaListener extends ParseTreeListener {
 	 */
 	void exitAssignOperator(LaParser.AssignOperatorContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code SpaceOperator}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterSpaceOperator(LaParser.SpaceOperatorContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code SpaceOperator}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitSpaceOperator(LaParser.SpaceOperatorContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code MethodApply}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
@@ -163,17 +152,29 @@ public interface LaListener extends ParseTreeListener {
 	 */
 	void exitMethodApply(LaParser.MethodApplyContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Number}
+	 * Enter a parse tree produced by the {@code DictLiteral}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterNumber(LaParser.NumberContext ctx);
+	void enterDictLiteral(LaParser.DictLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Number}
+	 * Exit a parse tree produced by the {@code DictLiteral}
 	 * labeled alternative in {@link LaParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitNumber(LaParser.NumberContext ctx);
+	void exitDictLiteral(LaParser.DictLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code StringLiteral}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringLiteral(LaParser.StringLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code StringLiteral}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringLiteral(LaParser.StringLiteralContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code RightOperator}
 	 * labeled alternative in {@link LaParser#expression}.
@@ -186,18 +187,6 @@ public interface LaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitRightOperator(LaParser.RightOperatorContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code Dict}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterDict(LaParser.DictContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code Dict}
-	 * labeled alternative in {@link LaParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitDict(LaParser.DictContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code PrefixExpression}
 	 * labeled alternative in {@link LaParser#expression}.
@@ -246,6 +235,18 @@ public interface LaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPostfixExpression(LaParser.PostfixExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code NumberLiteral}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumberLiteral(LaParser.NumberLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code NumberLiteral}
+	 * labeled alternative in {@link LaParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumberLiteral(LaParser.NumberLiteralContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LaParser#function_apply}.
 	 * @param ctx the parse tree
@@ -486,6 +487,16 @@ public interface LaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSignedInteger(LaParser.SignedIntegerContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LaParser#number}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumber(LaParser.NumberContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LaParser#number}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumber(LaParser.NumberContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LaParser#prefix_ops}.
 	 * @param ctx the parse tree

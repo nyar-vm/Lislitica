@@ -1,4 +1,5 @@
 // Generated from D:/Hybrid/Lislitica\La.g4 by ANTLR 4.7.2
+package Lislitica.antlr;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -86,7 +87,7 @@ public class LaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements LaV
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitString(LaParser.StringContext ctx) { return visitChildren(ctx); }
+	@Override public T visitSpaceOperator(LaParser.SpaceOperatorContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -100,13 +101,6 @@ public class LaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements LaV
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSpaceOperator(LaParser.SpaceOperatorContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitMethodApply(LaParser.MethodApplyContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -114,7 +108,14 @@ public class LaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements LaV
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitNumber(LaParser.NumberContext ctx) { return visitChildren(ctx); }
+	@Override public T visitDictLiteral(LaParser.DictLiteralContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitStringLiteral(LaParser.StringLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -122,13 +123,6 @@ public class LaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements LaV
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitRightOperator(LaParser.RightOperatorContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitDict(LaParser.DictContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -157,6 +151,13 @@ public class LaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements LaV
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitPostfixExpression(LaParser.PostfixExpressionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitNumberLiteral(LaParser.NumberLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -311,6 +312,13 @@ public class LaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements LaV
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitSignedInteger(LaParser.SignedIntegerContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitNumber(LaParser.NumberContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
